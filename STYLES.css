@@ -1,0 +1,94 @@
+.modal-content{
+
+	border-color: rgb(255, 255, 255);
+}
+.nav-link{
+	color: rgb(255, 255, 255);
+}
+.ui-title{
+	text-align: center;
+}
+#tblIP, tr{
+text-align: left;
+}
+.ui-footer{
+	align-items: right;
+}
+/* iPads (portrait & landscape) */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+	#tblIP{
+		width: 100%;
+	}
+}
+/* PC y portátiles */
+@media only screen 
+and (min-width : 1224px) {
+	#tblIP{
+		width: 100%;
+	}
+}
+/* Pantallas grandes */
+@media only screen 
+and (min-width : 1824px) {
+	#tblIP{
+		width: 100%;
+	}
+	/*body{
+			font-size: 	large;
+		}*/
+		#principal{
+			font-size: 	large;
+		}
+		#cont{
+			font-size: 	large;
+		}
+		.table{
+			margin-bottom: 4%;
+    		font-size: 	large;
+    		font-weight: normal;	
+				
+		} 
+}
+/*Portrait: orientación vertical, es decir, la altura es mayor o igual que el ancho. height>=width.
+Landscape: una orientación horizontal, es decir, el ancho es mayor que la altura. width>height.
+*/
+#principal, #abmUsuarios, #login{
+	padding-left: 0%;
+	padding-right:0%; 	
+} 
+
+#cont{
+	padding-left: 0%;
+	padding-right:0%; 	
+} 
+/* Smartphones (portrait & landscape) */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+		#tblIP{
+			width: 95%;
+		}	
+		/*body{
+			font-size: 	xx-large;
+		}*/
+		#principal{
+			font-size: 	xx-large;
+		}
+		#cont{
+			font-size: 	xx-large;
+		}
+		.table{
+			margin-bottom: 8%;
+    		font-size: 	xx-large;
+    		font-weight: normal;	
+				
+		} 
+		
+}
+#api, #lnkABM, #regis, #lnkLogin{
+	background-color:  rgb(255, 255, 255);
+	border-style: hidden ;
+	color: 	rgb(0, 102, 255); 	 	
+}

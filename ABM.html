@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+	<META CHARSET = "UTF-8">
+	<TITLE> Registro</TITLE>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="STYLES.css">
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="SCRIPT.js"></script>
+
+</HEAD>
+<BODY onload = "onload2()">
+	<FORM ID= "abmUsuarios" class="col-12">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  			<a class="navbar-brand" href="#">@</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			    	<li class="nav-item">
+			       		<a class="nav-link" href="LOGIN.html">Inicio</a>
+			    	</li>
+			    </ul>
+			    <div class="form-inline my-2 my-lg-0">
+			    	<a class="nav-link" href="LOGIN.html">Iniciar sesión</a>
+			    	<a class="nav-link" href="ABM.html">Registrarse/Editar</a>
+			    	<a class="nav-link" href="LOGIN.html" onclick="borrarSesionActual()">Cerrar sesión</a>
+			    </div>
+			  </div>
+		</nav>
+		<div  id="modRegistro" class="modal-content col-3">
+			<div class="modal-header">
+			   <h5  class="modal-title">Registrarse</h5>
+			</div>
+			<div name= "registro" class="modal-body">
+				    <LABEL FOR ="nombre"  class= "label"> Nombre Completo:</LABEL>
+					<br>
+					<INPUT TYPE= "text" id= "nombre" NAME ="nombre" class="input" PLEACEHOLDER= "Nombre Completo" REQUIRED>
+					<br>
+					<br>
+					<LABEL FOR ="Usuario"  class= "label"> Usuario:</LABEL>
+					<br>
+					<INPUT TYPE= "text" id= "usuario" NAME ="usuario" class="input" PLEACEHOLDER= "Usuario" REQUIRED>
+					<br>
+					<br>
+					<LABEL FOR ="pass"  class= "label"> Contraseña:</LABEL>
+					<br>
+					<INPUT TYPE= "password" id = "pass" NAME ="pass" class="input" PLEACEHOLDER= "Contraseña" REQUIRED>
+					<br>
+					<br>
+			</div>
+			<div class="modal-footer">
+			    <button id= "btnAlta" type="button" class="btn btn-dark"  onclick= "alta()">Registrarse</button>
+			    <button id= "btnRe" type="button" class="btn btn-dark" onclick= "limpiar()" >Borrar campos</button>
+				
+			</div>
+			<a  id= "lnkLogin" class = "mov" href="LOGIN.HTML"> Volver </a>
+		</div>
+		<div id= "Config" class="modal-content col-3" style="display: none;">
+			<div class="modal-header">
+		   		<h5 class="modal-title">Editar</h5>
+			</div>
+			<div class="modal-body" >
+		    	<LABEL FOR ="nombre"  class= "label"> Nombre Completo:</LABEL>
+				<br>
+				<INPUT TYPE= "text" id= "nom" NAME ="nombre" class="input" PLEACEHOLDER= "Nombre Completo" REQUIRED>
+				<br>
+				<br>
+				<LABEL FOR ="Usuario"  class= "label"> Usuario:</LABEL>
+				<br>
+				<INPUT TYPE= "text" id= "usua" NAME ="usuario" class="input" PLEACEHOLDER= "Usuario" REQUIRED>
+			</div>
+			<div class="modal-footer">
+		    	<button id= "btnBaja"  TYPE= "button" class="btn btn-dark" onclick= "borrarUsuario()"> Eliminar </button>
+				<button id= "btnMod"   TYPE= "button"  class="btn btn-dark" onclick="modificar()"> Modificar </button>
+		    	<button id= "btnReiniciar" type="button" class="btn btn-dark" onclick= "limpiarEditar()" >Borrar campos</button>
+			</div>
+			<a id="lnkconfig" href= "LOGIN.html">Volver</a>
+		</div>
+		<p id= "lblMsj"> </p>
+	</FORM>
+</BODY>

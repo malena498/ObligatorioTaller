@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+	<META CHARSET = "UTF-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="STYLES.css">
+	<script src="jquery-3.5.1.min.js"></script>
+	<script src="APIS.js"></script>
+</HEAD>
+<BODY onload= "funcOnload()">
+<FORM ID= "principal" class = "col-sm-12 col-md-12 col-lg-12 col-xl-12">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark col-sm-12 col-md-12 col-lg-12 col-xl-12">
+  		<a class="navbar-brand" href="#">@</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+		    	<li class="nav-item active">
+		       		<a class="nav-link" href="LOGIN.html">Inicio </a>
+		    	</li>
+		    </ul>
+		    <div class="form-inline my-2 my-lg-0">
+		    	<a class="nav-link" href="LOGIN.html">Iniciar sesión</a>
+		    	<a class="nav-link" href="ABM.html">Registrarse</a>
+		    	<a class="nav-link" href="LOGIN.html" onclick="borrarSesionActual()">Cerrar sesión</a>
+		    </div>
+		  </div>
+	</nav>
+	<br style="	font-size: small;">	
+	<div id = "cont" class="container col-sm-12 col-md-12 col-lg-12 col-xl-12">
+		<table id = "tblApiD" class="table table-borderless-responsive col-sm-12 col-md-12 col-lg-5 col-xl-5">
+		  <thead>
+		    <tr>
+		      <th scope="col">Código:</th>
+		      <th scope="col">Fecha:</th>
+		      <th scope="col">Nombre:</th>
+		      <th scope="col">Unidad de Medida:</th>
+		      <th scope="col">Valor:</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td id= "tdCodigo"></td>
+		      <td id= "tdFecha"></td>
+		      <td id= "tdNombre"></td>
+		      <td id="tdUM"></td>
+		      <td id= "tdValor"></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<input id= "buscar"  class="col-sm-4 col-md-4 col-lg-2 col-xl-2" type="text" name="buscar" >
+		<button type="button"  class="btn btn-dark col-sm-2 col-md-2 col-lg-1 col-xl-1" id= "btnBuscarD" onclick="apiDivisasBuscar()"> Buscar </button>
+		<br style="	font-size: small;">
+		<br style="	font-size: small;">
+		<table id = "tblApiDiv" class="table table-borderless-responsive col-sm-12 col-md-12 col-lg-5 col-xl-5">
+		  <thead>
+		    <tr>
+		      <th scope="col">Código:</th>
+		      <th scope="col">Fecha:</th>
+		      <th scope="col">Nombre:</th>
+		      <th scope="col">Unidad de Medida:</th>
+		      <th scope="col">Valor:</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td id= "tdCodigo1"></td>
+		      <td id= "tdFecha1"></td>
+		      <td id= "tdNombre1"></td>
+		      <td id="tdUM1"></td>
+		      <td id= "tdValor1"></td>
+		    </tr>
+		  </tbody>
+		</table>
+		<table id="tblApiR" class="table table-borderless-responsive col-sm-12 col-md-12 col-lg-5 col-xl-5">
+		  <thead>
+		    <tr>
+		      <th scope="col">Nombre:</th>
+		      <th scope="col">Segundo nombre:</th>
+		      <th scope="col">Nomenclatura:</th>
+		      <th scope="col">Imagen:</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td id= "tdNombre2"></td>
+		      <td id= "tdSegNom"></td>
+		      <td id= "tdNomenc"></td>
+		      <td id="tdImagen"></td>
+		   </tr>
+		  </tbody>
+		</table>
+		<button type="button" class="btn btn-dark col-sm-2 col-md-2 col-lg-1 col-xl-1" id= "btnrecargar" onclick="apiRandomUser()"> Recargar </button>
+		<br style="	font-size: small;">
+		<br style="	font-size: small;">
+		<input id= "buscarI" class="col-sm-4 col-md-4 col-lg-2 col-xl-2" type="text" name="buscarI" >
+		<button type="button"  class="btn btn-dark col-sm-2 col-md-2 col-lg-1 col-xl-1" id= "btnBuscarD" onclick="apiMercado()"> Buscar </button>
+		<br style="	font-size: small;">
+		<br style="	font-size: small;">
+		<table id="tblApiM" class="table table-borderless-responsive col-sm-12 col-md-12 col-lg-5 col-xl-5">
+		  <thead>
+		    <tr>
+		      <th scope="col">Titulo:</th>
+		      <th scope="col">Moneda:</th>
+		      <th scope="col">Precio:</th>
+		      <th scope="col">Imagen:</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		   
+		  </tbody>
+		</table>
+		</div>
+		<div class= "container col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<a class="link" class="col-sm-2 col-md-2 col-lg-1 col-xl-1" href="SECUNDARIO.HTML"  target="_blank"> Detección de IP. </a>
+			<p id= "lblMsj"> </p>
+		</div>
+	</FORM>
+</BODY>

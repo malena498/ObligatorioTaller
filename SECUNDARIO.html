@@ -1,0 +1,44 @@
+     <!doctype html> 
+<html>
+<HEAD>
+	<META CHARSET = "UTF-8">
+	<TITLE> Detección de IP</TITLE>
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  	<link rel="stylesheet" href="STYLES.css">
+	<script src="APIS.js"></script>
+
+</HEAD>
+<BODY onload= "apiIp()">
+		<div data-role="page">
+			<div data-role="header" data-position="fixed" role = "banner" class="ui-header ui-bar-inherit ui-header-fixed slidedown">
+				<h1 class = "ui-title">Detección de IP.</h1>
+			</div>
+		<div data-role="content" >
+			<table id = "tblIP">
+			  <thead>
+			    <tr>
+			      <th scope="col">IP:</th>
+			      <th scope="col">Código País:</th>
+			      <th scope="col">País:</th>
+			       <th scope="col">Bandera:</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr style="">
+			      <td id= "tdIP"></td>
+			      <td id= "tdCodPais"></td>
+			      <td id= "tdPais"></td>
+			      <td id= "tdBandera"></td>
+			    </tr>
+			  </tbody>
+			</table>
+		</div>
+		<div data-role="footer"  data-position="fixed" data-fullscreen="true" class= "ui-footer ui-footer-fullscreen ui-bar-inherit ui-footer-fixed slideup">
+				<input type= "button" class= "ui-btn" onclick="volver()" value ="Volver">
+		</div>
+	</div>
+</BODY>
+			
